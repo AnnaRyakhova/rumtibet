@@ -1,11 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800&display=swap');
+
+@font-face {
+  font-family: "NEXT ART";
+  src:
+    url('../../fonts/NEXTART_Bold.otf');
+}
+
 * {
   padding: 0px;
   margin: 0px;
   font-family: var(--font-main);
+  color: var(--text-color);
 }
 
 *,
 *::before,
 *::after {
 box-sizing: border-box;
+}
+
+
+:root {
+   /* ––– Font ––– */
+   --font-main: 'Nunito Sans', sans-serif;
+   --font-title: 'NEXT ART';
+
+   /* ––– Colors ––– */
+   --accent-color: #F2BE22;
+   --brand-color: #1A3E3E;
+   --text-color: #18121E;
+   --lightGray-color: #F3F5F4;
+   --white:#fff;
+}
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 16px;
+  }
 }

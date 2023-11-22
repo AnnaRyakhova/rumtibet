@@ -1,7 +1,8 @@
-import './App.css'
+import './App.css';
+import { Offer } from '../Offer';
 
 export const App = () => (
   <>
-    <div>jdhgkd</div>
+    <Offer/>
   </>
 )
