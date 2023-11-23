@@ -1,5 +1,5 @@
 import './App.css';
-import { Offer } from '../Offer';
+import { Offer } from '../Offer/Offer';
 
 export const App = () => (
   <>

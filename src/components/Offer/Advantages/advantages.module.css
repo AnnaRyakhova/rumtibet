@@ -1,0 +1,23 @@
+.advantage {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.advTitle {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 110%;
+}
+
+.advSubtitle {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%
+}

@@ -7,7 +7,7 @@ type Size = 'normal' | 'big'
 interface Button {
     size?: Size;
     children: string;
-    className: string;
+    className?: string;
 }
 
 export const Button: FC<Button> = ({ size = 'big', children, className }) => {
