@@ -33,12 +33,6 @@
     line-height: 150%;
 }
 
-.advantages {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
 .images {
     display: grid;
     grid-template-columns: 1fr 1fr;

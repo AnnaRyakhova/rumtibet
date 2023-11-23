@@ -1,13 +1,13 @@
 import styles from './Offer.module.css';
-import { Button } from '../UiKit/Button';
-import { Advantages } from './Advantages/advantages';
+import { Button } from '../UiKit/Button/Button';
+import { Advantages } from './Advantages/Advantages';
 
 export const Offer = () => {
     return (
         <div className={styles.background}>
             <div className="container">
                 <div className={styles.root}>
-                    <div className={styles.textAndButton}>
+                    <div>
                         <div className={styles.textContent}>
                             <div>
                                 <p className={styles.accentText}>наше предложение</p>
@@ -16,7 +16,7 @@ export const Offer = () => {
                             <p className={styles.subtitle}>
                                 Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа.
                             </p>
-                            <Advantages className={styles.advantages} />
+                            <Advantages />
                         </div>
                         <Button className={styles.button}>Стоимость программы</Button>
                     </div>

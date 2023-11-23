@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import styles from './advantages.module.css';
+import styles from './Advantages.module.css';
 
 interface Advantage {
     imgPath: string;
@@ -7,10 +7,6 @@ interface Advantage {
     title: string;
     subtitle: string;
     key: number;
-}
-
-interface Advantages {
-    className: string;
 }
 
 const Advantage: FC<Advantage> = ({ imgPath, alt, title, subtitle }) => {
@@ -47,9 +43,9 @@ const advantages = [
 ]
 
 
-export const Advantages: FC<Advantages> = ({ className }) => {
+export const Advantages = () => {
     return (
-        <div className={className}>
+        <div className={styles.advantages}>
             {advantages.map(({ imgPath, alt, title, subtitle }, index) => <Advantage imgPath={imgPath} alt={alt} title={title} subtitle={subtitle} key={index} />)}
         </div>
     )
