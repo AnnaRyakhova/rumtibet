@@ -66,10 +66,6 @@
     .root {
         gap: 50px;
     }
-
-    .textAndButton {
-        max-width: 45%;
-    }
 }
 
 @media (max-width: 1000px) {
@@ -83,10 +79,6 @@
 
     .subtitle {
         font-size: 16px;
-    }
-
-    .textAndButton {
-        max-width: 43%;
     }
 }
 
