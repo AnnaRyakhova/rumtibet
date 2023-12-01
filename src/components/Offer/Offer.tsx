@@ -1,23 +1,22 @@
 import styles from './Offer.module.css';
 import { Button } from '../UiKit/Button/Button';
 import { Advantages } from './Advantages/Advantages';
+import { Typography } from '../UiKit/Typography/Typography';
 
 export const Offer = () => {
     return (
         <div className={styles.background}>
             <div className="container">
                 <div className={styles.root}>
-                    <div>
-                        <div className={styles.textContent}>
-                            <div>
-                                <p className={styles.accentText}>наше предложение</p>
-                                <h2 className={styles.title}>Лучшие программы для тебя</h2>
-                            </div>
-                            <p className={styles.subtitle}>
-                                Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа.
-                            </p>
-                            <Advantages />
+                    <div className={styles.textContent}>
+                        <div>
+                            <Typography variant='accentSubtitle' color='accentColor'>наше предложение</Typography>
+                            <Typography variant='h2'>Лучшие программы для тебя</Typography>
                         </div>
+                        <Typography variant='mainText'>
+                            Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа.
+                        </Typography>
+                        <Advantages />
                         <Button className={styles.button}>Стоимость программы</Button>
                     </div>
 
