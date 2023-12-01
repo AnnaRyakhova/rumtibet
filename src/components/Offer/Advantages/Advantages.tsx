@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import styles from './Advantages.module.css';
+import { Typography } from '../../UiKit/Typography/Typography';
 
 interface Advantage {
     imgPath: string;
@@ -15,7 +16,7 @@ const Advantage: FC<Advantage> = ({ imgPath, alt, title, subtitle }) => {
             <img src={imgPath} alt={alt} />
             <div className={styles.description}>
                 <h3 className={styles.advTitle}>{title}</h3>
-                <p className={styles.advSubtitle}>{subtitle}</p>
+                <Typography variant='subtitle'>{subtitle}</Typography>
             </div>
         </div>
     )
