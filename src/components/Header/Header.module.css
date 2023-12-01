@@ -1,9 +1,17 @@
+.root {
+    display: flex;
+    justify-content: center;
+}
+
 .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: transparent;
     z-index: 999;
+    position: fixed;
+    width: 100%;
+    padding-top: 16px;
 }
 
 .logo {
