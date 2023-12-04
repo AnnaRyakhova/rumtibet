@@ -9,38 +9,39 @@ interface Typography {
     variant: Variant;
     color?: Color;
     children: string;
+    className?: string;
 }
 
-export const Typography: FC<Typography> = ({ variant, color = 'mainColor', children }) => {
+export const Typography: FC<Typography> = ({ variant, color = 'mainColor', children, className }) => {
 
     switch (variant) {
         case 'h1':
             return (
-                <h1 className={cl(styles.h1, styles[color])}>{children}</h1>
+                <h1 className={cl(styles.h1, styles[color], className)}>{children}</h1>
             )
 
         case 'h2':
             return (
-                <h2 className={cl(styles.h2, styles[color])}>{children}</h2>
+                <h2 className={cl(styles.h2, styles[color], className)}>{children}</h2>
             )
 
         case 'h3':
             return (
-                <h3 className={cl(styles.h3, styles[color])}>{children}</h3>
+                <h3 className={cl(styles.h3, styles[color], className)}>{children}</h3>
             )
 
         case 'accentSubtitle':
             return (
-                <p className={cl(styles.accentSubtitle, styles[color])}>{children}</p>
+                <p className={cl(styles.accentSubtitle, styles[color], className)}>{children}</p>
             )
 
         case 'mainText':
             return (
-                <p className={cl(styles.mainText, styles[color])}>{children}</p>
+                <p className={cl(styles.mainText, styles[color], className)}>{children}</p>
             )
         case 'subtitle':
             return (
-                <p className={cl(styles.subtitle, styles[color])}>{children}</p>
+                <p className={cl(styles.subtitle, styles[color], className)}>{children}</p>
             )
     }
 }
