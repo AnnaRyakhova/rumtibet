@@ -1,0 +1,67 @@
+.root {
+    background-image: url('/images/FirstScreen/firstScreen.jpg');
+    width: 100%;
+    padding: 16px 0 82px;
+    background-size: cover;
+    height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: end;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.title {
+    max-width: 1080px;
+}
+
+.formWrapper {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(3px);
+    padding:40px 44px 70px;
+    z-index: 0;
+}
+.form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button {
+    max-height: 52px;
+    white-space: nowrap;
+}
+
+.mobButton {
+    display: none;
+}
+
+@media (max-width: 1120px) {
+    .form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 40px;
+        column-gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobButton {
+        display: block;
+        max-width: 213px;
+        padding: 16px 36px;
+    }
+    .formWrapper {
+        display: none;
+    }
+
+}
