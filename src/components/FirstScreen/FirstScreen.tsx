@@ -1,5 +1,4 @@
 import styles from './FirstScreen.module.css'
-import { Header } from '../Header/Header'
 import { Typography } from '../UiKit/Typography/Typography'
 import { Button } from '../UiKit/Button/Button'
 import { Select } from './Select/Select'

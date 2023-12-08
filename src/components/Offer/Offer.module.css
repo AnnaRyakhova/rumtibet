@@ -5,7 +5,8 @@
 
 .root {
     display: flex;
-    gap: 90px;
+    gap: 40px;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -13,7 +14,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding-bottom: 40px;
+    max-width: 580px;
 }
 
 .accentText {
@@ -61,43 +62,28 @@
     border-radius: 50px 0;
 }
 
-
-@media (max-width: 1200px) {
-    .root {
-        gap: 50px;
-    }
+.button {
+    max-width: 245px;
 }
 
-@media (max-width: 1000px) {
-    .accentText {
-        font-size: 20px;
-    }
 
-    .title {
-        font-size: 28px;
-    }
-
-    .subtitle {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 890px) {
-    .background {
-        padding: 50px 0;
-    }
-
+@media (max-width: 904px) {
     .images {
         display: none;
     }
 
-    .textAndButton {
+    .textContent {
         max-width: 100%;
     }
 
     .button {
-        margin: 0 auto;
-        display: block;
+        align-self: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .background {
+        padding: 50px 0;
     }
 }
 
@@ -105,14 +91,6 @@
     .textContent {
         gap: 32px;
         padding-bottom: 32px;
-    }
-
-    .accentText {
-        font-size: 16px;
-    }
-
-    .title {
-        font-size: 24px;
     }
 }
 
