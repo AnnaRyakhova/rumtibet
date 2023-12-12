@@ -78,9 +78,13 @@
     .wrapper {
         padding-top: 50px;
         padding-bottom: 50px;
+        padding-left: 0;
+        padding-right: 0;
     }
     .cards {
         overflow-x: scroll;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .cardWrapper {
@@ -90,5 +94,12 @@
 
     .price p {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cards {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
