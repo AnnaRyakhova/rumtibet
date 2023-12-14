@@ -17,7 +17,7 @@ const Card: FC<Card> = ({ background, title, subtitle, price, rating }) => {
     return (
         <div className={styles.cardWrapper} style={{ backgroundImage: `url(${background})` }}>
             <div className={styles.rating}>
-                <Icon variant='star' color='#F2BE22' />
+                <Icon variant='star' color='accent' />
                 <p>{rating}</p>
             </div>
 
