@@ -4,6 +4,7 @@ import { FirstScreen } from '../FirstScreen/FirstScreen';
 import { Header } from '../Header/Header';
 import { About } from '../About/About';
 import { Directions } from '../Directions/Directions';
+import { Blog } from '../Blog/Blog';
 
 export const App = () => (
   <>
@@ -12,5 +13,6 @@ export const App = () => (
     <About />
     <Offer />
     <Directions />
+    <Blog />
   </>
 )

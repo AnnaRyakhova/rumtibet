@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import styles from './Typography.module.css'
 import cl from 'classnames'
 
@@ -8,7 +8,7 @@ type Color = 'brandColor' | 'accentColor' | 'lightColor'
 interface Typography {
     variant: Variant;
     color?: Color;
-    children: string;
+    children: ReactNode;
     className?: string;
 }
 
