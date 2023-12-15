@@ -12,6 +12,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
     'prettier',
+    "plugin:prettier/recommended",
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -23,5 +24,10 @@ module.exports = {
     ],
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
+    'react/jsx-max-props-per-line': [
+      2,
+      { maximum: 2, when: 'multiline' },
+    ],
+    'singleQuote': true
   },
 }
