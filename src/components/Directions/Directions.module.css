@@ -76,10 +76,7 @@
 
 @media (max-width: 768px) {
     .wrapper {
-        padding-top: 50px;
-        padding-bottom: 50px;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 50px 0;
     }
     .cards {
         overflow-x: scroll;
