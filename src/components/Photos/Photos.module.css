@@ -26,10 +26,25 @@
     border-radius: 6px;
     background-position: center;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wideItem {
     grid-column: span 2;
+}
+
+.loupe {
+    display: none;
+}
+
+.photo:hover {
+    cursor: pointer;
+    background: linear-gradient(0deg, rgba(26, 62, 62, 0.30) 0%, rgba(26, 62, 62, 0.30) 100%), lightgray 50% / cover no-repeat center;
+    .loupe {
+        display: block;
+    }
 }
 
 @media (max-width: 848px) {
