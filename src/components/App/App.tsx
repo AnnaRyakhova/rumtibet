@@ -5,6 +5,7 @@ import { Header } from '../Header/Header';
 import { About } from '../About/About';
 import { Directions } from '../Directions/Directions';
 import { Blog } from '../Blog/Blog';
+import { Photos } from '../Photos/Photos'
 
 export const App = () => (
   <>
@@ -14,5 +15,6 @@ export const App = () => (
     <Offer />
     <Directions />
     <Blog />
+    <Photos />
   </>
 )
