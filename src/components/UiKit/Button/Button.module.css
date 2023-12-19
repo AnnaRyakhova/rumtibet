@@ -7,10 +7,12 @@
 
 .big {
     padding: 16px 36px;
+    max-height: 52px;
 }
 
 .normal {
     padding: 12px 24px;
+    max-height: 44px;
 }
 
 .dark {
