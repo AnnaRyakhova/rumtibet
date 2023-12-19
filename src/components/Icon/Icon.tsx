@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { colors } from "../../styles/styles";
+import { FC } from 'react'
+import { colors } from '../../styles/styles'
 
 type Variant =
   | 'logo'
