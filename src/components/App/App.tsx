@@ -7,6 +7,7 @@ import { Directions } from '../Directions/Directions'
 import { Blog } from '../Blog/Blog'
 import { Photos } from '../Photos/Photos'
 import { Form } from '../Form/Form'
+import { Footer } from '../Footer/Footer'
 
 export const App = () => (
   <>
@@ -18,5 +19,6 @@ export const App = () => (
     <Blog />
     <Photos />
     <Form />
+    <Footer />
   </>
 )
