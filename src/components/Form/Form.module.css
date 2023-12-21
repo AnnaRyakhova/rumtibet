@@ -1,0 +1,135 @@
+.root {
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(26,62,62,1) 50%, rgba(26,62,62,1) 100%);
+    padding: 0 40px;
+}
+
+.wrapper {
+    background-color: var(--light-color);
+    padding: 40px 100px;
+    margin: 0 auto;
+    max-width: 1180px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0px 0px 15px 0px rgba(24, 18, 30, 0.12);
+}
+
+.title {
+    max-width: 380px;
+}
+.title p {
+    font-size: 18px;
+}
+
+.title h2 {
+    font-size: 26px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    padding-top: 28px;
+    max-width: 536px
+}
+
+.label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 125%;
+}
+
+.form input {
+    max-width: 280px;
+    width: 100%;
+    min-width: 154px;
+    height: 44px;
+    background-color: var(--lightGray-color);
+    border-radius: 4px;
+    padding: 0px 16px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 142%;
+    border-style: none;
+}
+
+.form input::placeholder {
+    color: var(--text-color);
+}
+
+
+.field {
+    display: flex;
+    gap: 16px;
+}
+
+.button {
+    max-width: 240px;
+    white-space: nowrap;
+}
+
+.caution {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 128%
+}
+
+.caution span {
+    text-decoration-line: underline;
+}
+
+
+@media (max-width: 1000px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 32px;
+        padding-right: 32px;
+        max-width: max-content;
+    }
+
+    .title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 624px) {
+    .root {
+        background: inherit;
+        padding: 0 40px 50px;
+    }
+    .wrapper {
+        align-items: start;
+        padding: 24px;
+        width: 100%;
+        gap: 18px;
+    }
+    .title {
+        text-align: left;
+    }
+
+    .title p {
+        font-size: 16px;
+    }
+    
+    .title h2 {
+        font-size: 24px;
+    }
+
+    .form {
+        gap: 24px;
+    }
+    .field {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .root {
+        padding: 0 16px 50px;
+    }
+}
