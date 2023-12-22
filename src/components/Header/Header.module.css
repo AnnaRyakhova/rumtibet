@@ -14,9 +14,22 @@
     padding-top: 16px;
 }
 
+.background {
+    position: fixed;
+    height: 102px;
+    background-color: var(--light-color);
+    width: 100vw;
+    z-index: 999;
+    box-shadow: 0px 0px 15px 0px rgba(24, 18, 30, 0.12);
+}
+
 .logo {
     width: 100%;
     max-width: 137px;
+}
+
+.logoColor path{
+    fill: var(--brand-color);
 }
 
 .nav {
@@ -36,11 +49,18 @@
 }
 
 .navItems a {
-    color: var(--light-color);
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
+    white-space: nowrap;
+}
+
+.darkLink {
+    color: var(--brand-color);
+}
+.lightLink {
+    color: var(--light-color);
 }
 
 .mobileMenuIcon {
@@ -51,13 +71,7 @@
     display: none;
 }
 
-@media (max-width: 1070px) {
-    .wrapper {
-        gap: 50px;
-    }
-}
-
-@media (max-width: 970px) {
+@media (max-width: 1080px) {
     .logo {
         display: none;
     }
@@ -66,9 +80,13 @@
         width: 100%;
         justify-content: space-between;
     }
+
+    .background {
+        height: 80px;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 888px) {
     .wrapper {
         justify-content: space-between;
         align-items: center;
@@ -131,5 +149,9 @@
 
     .closeIcon {
         margin-bottom: 10px;
+    }
+
+    .background {
+        height: 100px;
     }
 }

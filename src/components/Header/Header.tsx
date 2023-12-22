@@ -7,37 +7,63 @@ import { Icon } from '../Icon/Icon'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [navBg, setNavBg] = useState(false)
+
+  const height = window.screen.height
+  console.log(height)
+
+  const showBackground = () => {
+    if (window.scrollY >= height - 50) {
+      setNavBg(true)
+    } else {
+      setNavBg(false)
+    }
+  }
+
+  window.addEventListener('scroll', showBackground)
 
   return (
-    <div className={styles.root}>
+    <div className={cn(styles.root, { [styles.background]: navBg })}>
       <div className={cn('container', styles.wrapper)}>
-        <Icon variant="logo" color="light" className={styles.logo} />
+        <Icon variant="logo" color={navBg ? 'brand' : 'white'} className={styles.logo} />
 
         <nav className={styles.nav}>
           <ul className={cn(styles.navItems, { [styles.open]: isOpen })}>
-            <li className={styles.lii}>
+            <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#">Главная</a>
+              <a href="#" className={navBg ? styles.darkLink : styles.lightLink}>
+                Главная
+              </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#">Про гида</a>
+              <a href="#guide" className={navBg ? styles.darkLink : styles.lightLink}>
+                Про гида
+              </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#">Программа тура</a>
+              <a href="#program" className={navBg ? styles.darkLink : styles.lightLink}>
+                Программа тура
+              </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#">Стоимость</a>
+              <a href="#price" className={navBg ? styles.darkLink : styles.lightLink}>
+                Стоимость
+              </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#">Блог</a>
+              <a href="#blog" className={navBg ? styles.darkLink : styles.lightLink}>
+                Блог
+              </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#">Контакты</a>
+              <a href="#contacts" className={navBg ? styles.darkLink : styles.lightLink}>
+                Контакты
+              </a>
             </li>
           </ul>
 
@@ -49,7 +75,7 @@ export const Header = () => {
           {isOpen ? (
             <Icon variant="closeMenu" color="white" className={styles.closeIcon} />
           ) : (
-            <Icon variant="burger" color="white" />
+            <Icon variant="burger" color={navBg ? 'brand' : 'white'} />
           )}
         </button>
       </div>

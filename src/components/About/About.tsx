@@ -8,7 +8,7 @@ export const About = () => {
   const [isPlay, setIsPlay] = useState(false)
 
   return (
-    <div className={cn(styles.root, 'container')}>
+    <div className={cn(styles.root, 'container')} id="program">
       <div className={styles.wrapper}>
         <div className={styles.views}>
           <div className={styles.imgWrapper}>

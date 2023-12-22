@@ -132,4 +132,9 @@
     .root {
         padding: 0 16px 50px;
     }
+
+    .button {
+        white-space: wrap;
+        max-height: max-content;
+    }
 }
