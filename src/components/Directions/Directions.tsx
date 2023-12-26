@@ -40,7 +40,7 @@ const Card: FC<Card> = ({ background, title, subtitle, price, rating }) => {
 
 export const Directions = () => {
   return (
-    <div className={cn('container', styles.wrapper)}>
+    <div className={cn('container', styles.wrapper)} id="price">
       <div className={styles.text}>
         <Typography variant="accentSubtitle" color="accentColor">
           по версии отдыхающих

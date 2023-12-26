@@ -46,7 +46,7 @@ const Card: FC<Card> = ({ imgPath, title, subtitle, date, url }) => {
 
 export const Blog = () => {
   return (
-    <div className={styles.root}>
+    <div className={styles.root} id="blog">
       <div className={cn('container', styles.wrapper)}>
         <div className={styles.title}>
           <Typography variant="accentSubtitle" color="accentColor">

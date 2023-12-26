@@ -5,7 +5,7 @@ import { Typography } from '../UiKit/Typography/Typography'
 
 export const Offer = () => {
   return (
-    <div className={styles.background}>
+    <div className={styles.background} id="guide">
       <div className="container">
         <div className={styles.root}>
           <div className={styles.textContent}>
