@@ -56,6 +56,11 @@
     white-space: nowrap;
 }
 
+.navItems a:hover {
+    transition: 0.1s;
+    color: var(--accent-color);
+}
+
 .darkLink {
     color: var(--brand-color);
 }
