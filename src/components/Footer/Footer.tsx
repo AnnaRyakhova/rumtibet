@@ -18,10 +18,10 @@ export const Footer = () => {
 
             <div className={styles.links}>
               <div className={styles.contacts}>
-                <a href="#" className={styles.text}>
+                <a href="mailto:info@domain.com" className={styles.text}>
                   info@domain.com
                 </a>
-                <a href="#" className={styles.text}>
+                <a href="tel:81234567890" className={styles.text}>
                   +7 (123) 456-78-90
                 </a>
               </div>

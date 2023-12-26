@@ -62,11 +62,6 @@
     border-radius: 50px 0;
 }
 
-.button {
-    max-width: 245px;
-}
-
-
 @media (max-width: 904px) {
     .images {
         display: none;
