@@ -10,7 +10,6 @@ export const Header = () => {
   const [navBg, setNavBg] = useState(false)
 
   const height = window.screen.height
-  console.log(height)
 
   const showBackground = () => {
     if (window.scrollY >= height - 50) {

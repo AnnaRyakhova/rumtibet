@@ -8,9 +8,11 @@ import { Blog } from '../Blog/Blog'
 import { Photos } from '../Photos/Photos'
 import { Form } from '../Form/Form'
 import { Footer } from '../Footer/Footer'
+import { Toaster } from 'sonner'
 
 export const App = () => (
   <>
+    <Toaster closeButton expand={true} richColors />
     <Header />
     <FirstScreen />
     <About />

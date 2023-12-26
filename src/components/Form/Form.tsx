@@ -1,8 +1,13 @@
 import { Button } from '../UiKit/Button/Button'
 import { Typography } from '../UiKit/Typography/Typography'
 import styles from './Form.module.css'
+import { toast } from 'sonner'
 
 export const Form = () => {
+  const handleSubmit = () => {
+    toast.success('Теперь вы будете знать наши новости и акции!')
+  }
+
   return (
     <div className={styles.root}>
       <div className={styles.wrapper}>
@@ -13,7 +18,7 @@ export const Form = () => {
           <Typography variant="h2">Получайте полезные рассылки о путешествиях</Typography>
         </div>
 
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.field}>
             <label htmlFor="email" className={styles.label}>
               Введите e-mail адрес
