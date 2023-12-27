@@ -64,6 +64,7 @@
 .darkLink {
     color: var(--brand-color);
 }
+
 .lightLink {
     color: var(--light-color);
 }
@@ -125,6 +126,10 @@
 
     .navItems li:hover svg path {
         fill: var(--accent-color);
+    }
+
+    .darkLink {
+        color: var(--light-color);
     }
 
     .logo {

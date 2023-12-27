@@ -31,37 +31,45 @@ export const Header = () => {
           <ul className={cn(styles.navItems, { [styles.open]: isOpen })}>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={() => setIsOpen(false)} href="#" className={navBg ? styles.darkLink : styles.lightLink}>
                 Главная
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#guide" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={() => setIsOpen(false)} href="#guide" className={navBg ? styles.darkLink : styles.lightLink}>
                 Про гида
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#program" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a
+                onClick={() => setIsOpen(false)}
+                href="#program"
+                className={navBg ? styles.darkLink : styles.lightLink}
+              >
                 Программа тура
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#price" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={() => setIsOpen(false)} href="#price" className={navBg ? styles.darkLink : styles.lightLink}>
                 Стоимость
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#blog" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={() => setIsOpen(false)} href="#blog" className={navBg ? styles.darkLink : styles.lightLink}>
                 Блог
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#contacts" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a
+                onClick={() => setIsOpen(false)}
+                href="#contacts"
+                className={navBg ? styles.darkLink : styles.lightLink}
+              >
                 Контакты
               </a>
             </li>
