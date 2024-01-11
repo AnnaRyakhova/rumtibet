@@ -2,19 +2,23 @@ import styles from './Select.module.css'
 import { FC } from 'react'
 import { Typography } from '../../UiKit/Typography/Typography'
 
-interface Options {
+export interface Option {
   value: string
-  option: string
-}
-interface Select {
-  label: string
-  labelFor: string
-  options: Options[]
-  className?: string
-  labelClass?: string
+  text: string
+  disabled?: boolean
 }
 
-export const Select: FC<Select> = ({ label, labelFor, options, className, labelClass }) => {
+interface Select {
+  value?: string | number | null
+  label: string
+  labelFor: string
+  options: Option[]
+  className?: string
+  labelClass?: string
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void
+}
+
+export const Select: FC<Select> = ({ value, label, labelFor, options, className, labelClass, onChange }) => {
   return (
     <div className={className}>
       <label htmlFor={labelFor} className={labelClass}>
@@ -22,12 +26,14 @@ export const Select: FC<Select> = ({ label, labelFor, options, className, labelC
           {label}
         </Typography>
       </label>
-      <select id={labelFor} className={styles.select}>
-        {options.map(({ value, option }, index) => (
-          <option value={value} key={index}>
-            {option}
-          </option>
-        ))}
+      <select value={value ?? ''} id={labelFor} className={styles.select} onChange={onChange} required>
+        {options.map(({ value, text, disabled = false }, index) => {
+          return (
+            <option value={value} key={index} disabled={disabled}>
+              {text}
+            </option>
+          )
+        })}
       </select>
     </div>
   )
