@@ -18,6 +18,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'react', 'prettier'],
   rules: {
+    "no-console": 2,
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
@@ -28,6 +29,6 @@ module.exports = {
       2,
       { maximum: 2, when: 'multiline' },
     ],
-    'singleQuote': true
+    'singleQuote': true,
   },
 }

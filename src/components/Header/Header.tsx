@@ -7,60 +7,66 @@ import { Icon } from '../Icon/Icon'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [navBg, setNavBg] = useState(false)
+  const [isNavBg, setisNavBg] = useState(false)
 
   const height = window.screen.height
 
   const showBackground = () => {
     if (window.scrollY >= height - 50) {
-      setNavBg(true)
+      setisNavBg(true)
     } else {
-      setNavBg(false)
+      setisNavBg(false)
     }
   }
 
   window.addEventListener('scroll', showBackground)
 
+  const сlassName = isNavBg ? styles.darkLink : styles.lightLink
+
+  const handleCloseMenu = () => {
+    setIsOpen(false)
+  }
+
   return (
-    <div className={cn(styles.root, { [styles.background]: navBg })}>
+    <div className={cn(styles.root, { [styles.background]: isNavBg })}>
       <div className={cn('container', styles.wrapper)}>
-        <Icon variant="logo" color={navBg ? 'brand' : 'white'} className={styles.logo} />
+        <Icon variant="logo" color={isNavBg ? 'brand' : 'white'} className={styles.logo} />
 
         <nav className={styles.nav}>
           <ul className={cn(styles.navItems, { [styles.open]: isOpen })}>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={handleCloseMenu} href="#" className={сlassName}>
                 Главная
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#guide" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={handleCloseMenu} href="#guide" className={сlassName}>
                 Про гида
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#program" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={handleCloseMenu} href="#program" className={сlassName}>
                 Программа тура
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#price" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={handleCloseMenu} href="#price" className={сlassName}>
                 Стоимость
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#blog" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={handleCloseMenu} href="#blog" className={сlassName}>
                 Блог
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a href="#contacts" className={navBg ? styles.darkLink : styles.lightLink}>
+              <a onClick={handleCloseMenu} href="#contacts" className={сlassName}>
                 Контакты
               </a>
             </li>
@@ -74,7 +80,7 @@ export const Header = () => {
           {isOpen ? (
             <Icon variant="closeMenu" color="white" className={styles.closeIcon} />
           ) : (
-            <Icon variant="burger" color={navBg ? 'brand' : 'white'} />
+            <Icon variant="burger" color={isNavBg ? 'brand' : 'white'} />
           )}
         </button>
       </div>
