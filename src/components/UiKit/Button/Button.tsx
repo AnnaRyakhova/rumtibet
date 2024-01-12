@@ -10,8 +10,13 @@ interface Button {
   color?: Color
   children: string
   className?: string
+  onClick?: (e: React.MouseEvent) => void
 }
 
-export const Button: FC<Button> = ({ size = 'big', color = 'dark', children, className }) => {
-  return <button className={cl(styles.button, styles[size], styles[color], className)}>{children}</button>
+export const Button: FC<Button> = ({ size = 'big', color = 'dark', children, className, onClick }) => {
+  return (
+    <button onClick={onClick} className={cl(styles.button, styles[size], styles[color], className)}>
+      {children}
+    </button>
+  )
 }

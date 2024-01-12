@@ -3,6 +3,7 @@ import { Typography } from '../UiKit/Typography/Typography'
 import styles from './Blog.module.css'
 import cn from 'classnames'
 import { Button } from '../UiKit/Button/Button'
+import { toast } from 'sonner'
 
 interface Card {
   imgPath: string
@@ -34,9 +35,9 @@ const Card: FC<Card> = ({ imgPath, title, subtitle, date, url }) => {
             <Typography variant="subtitle" className={styles.date}>
               {date}
             </Typography>
-            <a href={url} className={styles.url}>
+            <Typography variant="subtitle" className={styles.url}>
               читать статью
-            </a>
+            </Typography>
           </div>
         </div>
       </div>
@@ -45,6 +46,8 @@ const Card: FC<Card> = ({ imgPath, title, subtitle, date, url }) => {
 }
 
 export const Blog = () => {
+  const handleClick = () => toast.info('Новых постов пока нет 😔')
+
   return (
     <div className={styles.root} id="blog">
       <div className={cn('container', styles.wrapper)}>
@@ -86,7 +89,7 @@ export const Blog = () => {
           />
         </div>
 
-        <Button>Другие материалы</Button>
+        <Button onClick={handleClick}>Другие материалы</Button>
       </div>
     </div>
   )

@@ -2,8 +2,10 @@ import styles from './Offer.module.css'
 import { Button } from '../UiKit/Button/Button'
 import { Advantages } from './Advantages/Advantages'
 import { Typography } from '../UiKit/Typography/Typography'
+import { toast } from 'sonner'
 
 export const Offer = () => {
+  const handleClick = () => toast.error('Что-то пошло не так')
   return (
     <div className={styles.background} id="guide">
       <div className="container">
@@ -20,7 +22,10 @@ export const Offer = () => {
               Ричард МакКлинток, профессор латыни из колледжа.
             </Typography>
             <Advantages />
-            <Button className={styles.button}>Стоимость программы</Button>
+
+            <Button className={styles.button} onClick={handleClick}>
+              Стоимость программы
+            </Button>
           </div>
 
           <div className={styles.images}>
