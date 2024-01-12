@@ -21,9 +21,7 @@ export const Header = () => {
 
   window.addEventListener('scroll', showBackground)
 
-  const getClassName = (isNavBg: boolean): string => {
-    return isNavBg ? styles.darkLink : styles.lightLink
-  }
+  const сlassName = isNavBg ? styles.darkLink : styles.lightLink
 
   const handleCloseMenu = () => {
     setIsOpen(false)
@@ -38,37 +36,37 @@ export const Header = () => {
           <ul className={cn(styles.navItems, { [styles.open]: isOpen })}>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#" className={getClassName(isNavBg)}>
+              <a onClick={handleCloseMenu} href="#" className={сlassName}>
                 Главная
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#guide" className={getClassName(isNavBg)}>
+              <a onClick={handleCloseMenu} href="#guide" className={сlassName}>
                 Про гида
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#program" className={getClassName(isNavBg)}>
+              <a onClick={handleCloseMenu} href="#program" className={сlassName}>
                 Программа тура
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#price" className={getClassName(isNavBg)}>
+              <a onClick={handleCloseMenu} href="#price" className={сlassName}>
                 Стоимость
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#blog" className={getClassName(isNavBg)}>
+              <a onClick={handleCloseMenu} href="#blog" className={сlassName}>
                 Блог
               </a>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#contacts" className={getClassName(isNavBg)}>
+              <a onClick={handleCloseMenu} href="#contacts" className={сlassName}>
                 Контакты
               </a>
             </li>
