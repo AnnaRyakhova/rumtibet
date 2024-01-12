@@ -23,14 +23,12 @@
     max-width: 1080px;
 }
 
-.formWrapper {
+.form {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.20);
     backdrop-filter: blur(3px);
-    padding:40px 44px 70px;
+    padding: 40px 44px 70px;
     z-index: 0;
-}
-.form {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -38,6 +36,7 @@
 
 .button {
     white-space: nowrap;
+    max-width: 100%;
 }
 
 .mobButton {
@@ -86,6 +85,7 @@
 .datePickerWrapper {
     width: 100%;
 }
+
 @media (max-width: 1220px) {
     .form {
         display: grid;
@@ -105,7 +105,8 @@
         max-width: 213px;
         padding: 16px 36px;
     }
-    .formWrapper {
+
+    .form {
         display: none;
     }
 

@@ -7,56 +7,37 @@ import DatePicker from 'react-datepicker'
 import { useState } from 'react'
 import 'react-datepicker/dist/react-datepicker.css'
 import { Icon } from '../Icon/Icon'
+import { Form, INITIAL_FORM, LOCATIONS } from './constants'
+import { getOptions, getLabel, isRangeContainsMembers, getDefaultMembersCount } from './utils'
 
-const locations = [
-  {
-    value: 'selectTitle',
-    option: 'Локация для тура',
-  },
-  {
-    value: 'Beijing',
-    option: 'Пекин',
-  },
-  {
-    value: 'Lhasa',
-    option: 'Лхаса',
-  },
-  {
-    value: 'Shanghai',
-    option: 'Шанхай',
-  },
-]
-
-const members = [
-  {
-    value: 'selectTitle',
-    option: 'Участники',
-  },
-  {
-    value: 'Beijing',
-    option: 'Пекин',
-  },
-  {
-    value: 'Lhasa',
-    option: 'Лхаса',
-  },
-  {
-    value: 'Shanghai',
-    option: 'Шанхай',
-  },
-]
-
-type Range = [Date, Date]
+export type Range = [Date, Date]
 
 export const FirstScreen = () => {
-  const [startDate, setStartDate] = useState<Date>()
-  const [endDate, setEndDate] = useState<Date>()
+  const [form, setForm] = useState<Form>(INITIAL_FORM)
 
-  const handleChange = (range: Range): void => {
-    console.log(range)
+  const handleRange = (range: Range): void => {
     const [startDate, endDate] = range
-    setStartDate(startDate)
-    setEndDate(endDate)
+    setForm((oldForm) => ({ ...oldForm, startDate: startDate, endDate: endDate }))
+  }
+
+  const handleLocation = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const location = e.target.value
+
+    if (isRangeContainsMembers(form.members, location)) {
+      setForm((oldForm) => ({ ...oldForm, location: location }))
+    } else {
+      setForm((oldForm) => ({ ...oldForm, location: location, members: null }))
+    }
+
+    const defaultMembers = getDefaultMembersCount(location)
+
+    if (defaultMembers) {
+      setForm((oldForm) => ({ ...oldForm, location: location, members: defaultMembers }))
+    }
+  }
+
+  const handleMembers = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setForm((oldForm) => ({ ...oldForm, members: e.target.value }))
   }
 
   return (
@@ -66,48 +47,52 @@ export const FirstScreen = () => {
           <Typography variant="h1" color="lightColor" className={styles.title}>
             Насладись прогулкой в горах с командой единомышленников
           </Typography>
-          <div className={styles.formWrapper}>
-            <form className={styles.form}>
-              <Select
-                label="выберите из списка"
-                labelFor="location"
-                options={locations}
+
+          <form className={styles.form}>
+            <Select
+              value={form.location}
+              label="выберите из списка"
+              labelFor="location"
+              options={LOCATIONS}
+              className={styles.input}
+              labelClass={styles.label}
+              onChange={handleLocation}
+            />
+
+            <div className={styles.datePicker}>
+              <DatePicker
+                selected={form.startDate}
+                onChange={handleRange}
+                startDate={form.startDate}
+                endDate={form.endDate}
+                selectsRange
                 className={styles.input}
-                labelClass={styles.label}
+                placeholderText="Дата похода"
+                wrapperClassName={styles.datePickerWrapper}
+                dateFormat="dd.MM.yyyy"
+                closeOnScroll
               />
+              <Icon variant="calendar" color="white" className={styles.calendarIcon} />
+              <Typography variant="subtitle" color="lightColor" className={styles.label}>
+                укажите диапазон
+              </Typography>
+            </div>
 
-              <div className={styles.datePicker}>
-                <DatePicker
-                  selected={startDate}
-                  onChange={handleChange}
-                  startDate={startDate}
-                  endDate={endDate}
-                  selectsRange
-                  className={styles.input}
-                  placeholderText="Дата похода"
-                  wrapperClassName={styles.datePickerWrapper}
-                  dateFormat="dd/MM/yyyy"
-                  closeOnScroll
-                />
-                <Icon variant="calendar" color="white" className={styles.calendarIcon} />
-                <Typography variant="subtitle" color="lightColor" className={styles.label}>
-                  укажите диапазон
-                </Typography>
-              </div>
+            <Select
+              value={form.members}
+              label={getLabel(form.location)}
+              onChange={handleMembers}
+              labelFor="members"
+              options={getOptions(form.location)}
+              className={styles.input}
+              labelClass={styles.label}
+            />
 
-              <Select
-                label="минимум 4 человека"
-                labelFor="members"
-                options={members}
-                className={styles.input}
-                labelClass={styles.label}
-              />
+            <Button color="light" className={styles.button}>
+              Найти программу
+            </Button>
+          </form>
 
-              <Button color="light" className={styles.button}>
-                Найти программу
-              </Button>
-            </form>
-          </div>
           <Button color="light" className={styles.mobButton}>
             Найти программу
           </Button>
