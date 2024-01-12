@@ -53,11 +53,9 @@ export const isRangeContainsMembers = (members: string | null, location: string)
 
   const membersCount = Number(members)
 
-  if (membersCount === null) {
-    return false
-  } else {
-    return membersCount >= minMembers && membersCount <= maxMembers
-  }
+  const isContain = membersCount >= minMembers && membersCount <= maxMembers
+
+  return !!membersCount && isContain
 }
 
 export const getDefaultMembersCount = (location: string): string | null => {
