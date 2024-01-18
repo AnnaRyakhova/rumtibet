@@ -68,7 +68,7 @@ export const getDefaultMembersCount = (location: string): string | null => {
   }
 }
 
-export const getLocation = (value: string): string | undefined => {
+export const getLocation = (value: string): string => {
   const location = LOCATIONS.find((loc) => loc.value === value)
-  return location?.text
+  return location?.text as string
 }

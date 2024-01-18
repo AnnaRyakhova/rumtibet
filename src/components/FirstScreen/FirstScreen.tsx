@@ -43,14 +43,19 @@ export const FirstScreen = () => {
     setForm((oldForm) => ({ ...oldForm, members: e.target.value }))
   }
 
-  const locationValid = useValidation(form.location, { isEmpty: true })
-  const dateValid = useValidation(form.endDate, { isEmpty: true })
-  const membersValid = useValidation(form.members, { isEmpty: true })
+  const RULE_IS_EMPTY = { isEmpty: true }
+  const { location, endDate, members } = form
+
+  const locationValid = useValidation(location, RULE_IS_EMPTY)
+  const dateValid = useValidation(endDate, RULE_IS_EMPTY)
+  const membersValid = useValidation(members, RULE_IS_EMPTY)
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (locationValid.isEmpty || dateValid.isEmpty || membersValid.isEmpty) {
+    const invalid = locationValid.isEmpty || dateValid.isEmpty || membersValid.isEmpty
+
+    if (invalid) {
       toast.error('Пожалуйста, заполните все поля')
     } else {
       const startDate = moment(form.startDate).format('DD.MM.YYYY')
