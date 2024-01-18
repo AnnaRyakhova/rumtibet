@@ -30,5 +30,6 @@ module.exports = {
       { maximum: 2, when: 'multiline' },
     ],
     'singleQuote': 0,
+    'no-useless-escape': 1,
   },
 }

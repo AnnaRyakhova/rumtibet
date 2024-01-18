@@ -2,7 +2,7 @@ export const LOCATIONS = [
   {
     value: '',
     text: 'Локация для тура',
-    disabled: true
+    disabled: true,
   },
   {
     value: 'Beijing',
@@ -39,17 +39,17 @@ export const MOCK_TOURS: BackendTour[] = [
 ]
 
 export interface Form {
-  location: string | null
-  members: string | null
+  location: string
+  members: string
   startDate: Date | null
   endDate: Date | null
 }
 
 export const INITIAL_FORM: Form = {
-  location: null,
-  members: null,
+  location: '',
+  members: '',
   startDate: null,
   endDate: null,
 }
 
-export const DEFAULT_MEMBERS_OPTION = { value: '', text: 'Участники', disabled: true}
+export const DEFAULT_MEMBERS_OPTION = { value: '', text: 'Участники', disabled: true }
