@@ -1,4 +1,4 @@
-import { MOCK_TOURS, BackendTour, DEFAULT_MEMBERS_OPTION } from './constants'
+import { MOCK_TOURS, BackendTour, DEFAULT_MEMBERS_OPTION, LOCATIONS } from './constants'
 import { Option } from './Select/Select'
 
 const getTour = (location: string | null): BackendTour => {
@@ -66,4 +66,9 @@ export const getDefaultMembersCount = (location: string): string | null => {
   } else {
     return null
   }
+}
+
+export const getLocation = (value: string): string => {
+  const location = LOCATIONS.find((loc) => loc.value === value)
+  return location?.text as string
 }

@@ -8,7 +8,10 @@ import { useState } from 'react'
 import 'react-datepicker/dist/react-datepicker.css'
 import { Icon } from '../Icon/Icon'
 import { Form, INITIAL_FORM, LOCATIONS } from './constants'
-import { getOptions, getLabel, isRangeContainsMembers, getDefaultMembersCount } from './utils'
+import { getOptions, getLabel, isRangeContainsMembers, getDefaultMembersCount, getLocation } from './utils'
+import { useValidation } from '../../hooks'
+import { toast } from 'sonner'
+import moment from 'moment'
 
 export type Range = [Date, Date]
 
@@ -26,7 +29,7 @@ export const FirstScreen = () => {
     if (isRangeContainsMembers(form.members, location)) {
       setForm((oldForm) => ({ ...oldForm, location: location }))
     } else {
-      setForm((oldForm) => ({ ...oldForm, location: location, members: null }))
+      setForm((oldForm) => ({ ...oldForm, location: location, members: '' }))
     }
 
     const defaultMembers = getDefaultMembersCount(location)
@@ -40,6 +43,29 @@ export const FirstScreen = () => {
     setForm((oldForm) => ({ ...oldForm, members: e.target.value }))
   }
 
+  const RULE_IS_EMPTY = { isEmpty: true }
+  const { location, endDate, members } = form
+
+  const locationValid = useValidation(location, RULE_IS_EMPTY)
+  const dateValid = useValidation(endDate, RULE_IS_EMPTY)
+  const membersValid = useValidation(members, RULE_IS_EMPTY)
+
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const invalid = locationValid.isEmpty || dateValid.isEmpty || membersValid.isEmpty
+
+    if (invalid) {
+      toast.error('Пожалуйста, заполните все поля')
+    } else {
+      const startDate = moment(form.startDate).format('DD.MM.YYYY')
+      const endDate = moment(form.endDate).format('DD.MM.YYYY')
+      const location = getLocation(form.location)
+
+      toast.success(`Выполняем поиск тура в ${location} с ${startDate} по ${endDate}`)
+    }
+  }
+
   return (
     <div className={styles.root}>
       <div className={cn('container', styles.wrapper)}>
@@ -48,7 +74,7 @@ export const FirstScreen = () => {
             Насладись прогулкой в горах с командой единомышленников
           </Typography>
 
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit} noValidate>
             <Select
               value={form.location}
               label="выберите из списка"
