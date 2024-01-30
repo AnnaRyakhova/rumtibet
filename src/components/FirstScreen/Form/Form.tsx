@@ -1,5 +1,5 @@
 import styles from './Form.module.css'
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import { FormState, INITIAL_FORM, LOCATIONS } from '../constants'
 import { getDefaultMembersCount, getLabel, getLocation, getOptions, isRangeContainsMembers } from '../utils'
 import moment from 'moment'
@@ -11,14 +11,10 @@ import { Icon } from '../../Icon/Icon'
 import { Typography } from '../../UiKit/Typography/Typography'
 import { Button } from '../../UiKit/Button/Button'
 
-interface Form {
-  onClick: (e: React.MouseEvent<HTMLFormElement>) => void
-  type: string
-}
+type Range = [Date, Date]
 
-export const Form: FC<Form> = ({ onClick, type }) => {
+export const Form = ({ type }: { type: string }) => {
   const [form, setForm] = useState<FormState>(INITIAL_FORM)
-  type Range = [Date, Date]
 
   const handleRange = (range: Range): void => {
     const [startDate, endDate] = range
@@ -69,7 +65,7 @@ export const Form: FC<Form> = ({ onClick, type }) => {
   }
 
   return (
-    <form className={styles[type]} onSubmit={handleSubmit} noValidate onClick={onClick}>
+    <form className={styles[type]} onSubmit={handleSubmit} noValidate onClick={(e) => e.stopPropagation()}>
       <Select
         value={form.location}
         label="выберите из списка"

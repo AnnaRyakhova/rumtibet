@@ -5,7 +5,6 @@ import cn from 'classnames'
 import 'react-datepicker/dist/react-datepicker.css'
 import { Form } from './Form/Form'
 import { useState } from 'react'
-import { ModalForm } from './ModalForm/ModalForm'
 
 export const FirstScreen = () => {
   const [modalActive, setModalActive] = useState(false)
@@ -18,13 +17,18 @@ export const FirstScreen = () => {
             Насладись прогулкой в горах с командой единомышленников
           </Typography>
 
-          <Form onClick={(e) => e.stopPropagation()} type="form" />
+          <Form type="form" />
 
           <Button color="light" className={styles.mobButton} onClick={() => setModalActive(true)}>
             Найти программу
           </Button>
 
-          <ModalForm active={modalActive} setActive={setModalActive} />
+          <div
+            className={cn(styles.modal, modalActive ? [styles.active] : [styles.notActive])}
+            onClick={() => setModalActive(false)}
+          >
+            <Form type="modalForm" />
+          </div>
         </div>
       </div>
     </div>
