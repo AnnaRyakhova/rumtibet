@@ -24,80 +24,29 @@
     max-width: 1080px;
 }
 
-.form {
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.20);
-    backdrop-filter: blur(3px);
-    padding: 40px 44px 70px;
-    z-index: 0;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.button {
-    white-space: nowrap;
-    max-width: 100%;
-}
-
 .mobButton {
     display: none;
 }
 
-.input {
-    position: relative;
-    background: rgba(255, 255, 255, 0.20);
-    border-color: var(--light-color);
-    padding: 14px 16px;
-    border-radius: 8px;
-    border: 1px solid var(--light-color);
-    width: 270px;
-    height: 52px;
-    color: var(--light-color);
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 150%;
+.modal {
+    height: 100lvh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
-.input::placeholder {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--light-color);
-  }
-
-.datePicker {
-    position: relative;
+.active {
+    transform: scale(1);
 }
 
-.calendarIcon {
-    position:absolute;
-    top: 17px;
-    right: 16px;
-}
-
-.label {
-    display: block;
-    position: absolute;
-    left: 8px;
-    top: 60px;
-    white-space: nowrap;
-}
-
-.datePickerWrapper {
-    width: 100%;
-}
-
-@media (max-width: 1220px) {
-    .form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: 40px;
-        column-gap: 50px;
-    }
-
-    .input {
-        width: 100%;
-    }
+.notActive {
+    transform: scale(0);
 }
 
 @media (max-width: 932px){
@@ -116,11 +65,6 @@
         max-width: 213px;
         padding: 16px 36px;
     }
-
-    .form {
-        display: none;
-    }
-
 }
 
 @media (max-width: 430px) {
