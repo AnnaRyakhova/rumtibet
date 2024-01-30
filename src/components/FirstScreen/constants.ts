@@ -38,14 +38,14 @@ export const MOCK_TOURS: BackendTour[] = [
   },
 ]
 
-export interface Form {
+export interface FormState {
   location: string
   members: string
   startDate: Date | null
   endDate: Date | null
 }
 
-export const INITIAL_FORM: Form = {
+export const INITIAL_FORM: FormState = {
   location: '',
   members: '',
   startDate: null,
