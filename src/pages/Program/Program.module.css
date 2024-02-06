@@ -1,0 +1,24 @@
+.root {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.image {
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    .root {
+        padding-bottom: 50px;
+    }
+
+    .image {
+        height: 300px;
+    }
+}
+

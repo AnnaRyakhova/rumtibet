@@ -1,74 +1,76 @@
 import styles from './Header.module.css'
 import { Button } from '../UiKit/Button/Button'
-
-import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import cn from 'classnames'
 import { Icon } from '../Icon/Icon'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isNavBg, setisNavBg] = useState(false)
+  const [scroll, setScroll] = useState(0)
 
-  const height = window.innerHeight
+  const { pathname } = useLocation()
 
-  const showBackground = () => {
-    if (window.scrollY >= height - 50) {
-      setisNavBg(true)
-    } else {
-      setisNavBg(false)
+  const isNavBackground = pathname !== '/' || scroll >= window.innerHeight - 50
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY)
     }
-  }
-
-  window.addEventListener('scroll', showBackground)
-
-  const сlassName = isNavBg ? styles.darkLink : styles.lightLink
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  })
 
   const handleCloseMenu = () => {
     setIsOpen(false)
   }
 
+  const className = isNavBackground ? styles.darkLink : styles.lightLink
+  const color = isNavBackground ? 'brand' : 'white'
+
   return (
-    <div className={cn(styles.root, { [styles.background]: isNavBg })}>
+    <div className={cn(styles.root, { [styles.background]: isNavBackground })}>
       <div className={cn('container', styles.wrapper)}>
-        <Icon variant="logo" color={isNavBg ? 'brand' : 'white'} className={styles.logo} />
+        <Icon variant="logo" color={color} className={styles.logo} />
 
         <nav className={styles.nav}>
           <ul className={cn(styles.navItems, { [styles.open]: isOpen })}>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#" className={сlassName}>
+              <Link onClick={handleCloseMenu} to="/" className={className}>
                 Главная
-              </a>
+              </Link>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#guide" className={сlassName}>
+              <Link onClick={handleCloseMenu} to="/#guide" className={className}>
                 Про гида
-              </a>
+              </Link>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#program" className={сlassName}>
+              <Link onClick={handleCloseMenu} to="program" className={className}>
                 Программа тура
-              </a>
+              </Link>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#price" className={сlassName}>
+              <Link onClick={handleCloseMenu} to="/#price" className={className}>
                 Стоимость
-              </a>
+              </Link>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#blog" className={сlassName}>
+              <Link onClick={handleCloseMenu} to="/#blog" className={className}>
                 Блог
-              </a>
+              </Link>
             </li>
             <li>
               <Icon variant="menuArrow" color="light" className={styles.menuArrow} />
-              <a onClick={handleCloseMenu} href="#contacts" className={сlassName}>
+              <Link onClick={handleCloseMenu} to={`${pathname}#contacts`} className={className}>
                 Контакты
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -80,7 +82,7 @@ export const Header = () => {
           {isOpen ? (
             <Icon variant="closeMenu" color="white" className={styles.closeIcon} />
           ) : (
-            <Icon variant="burger" color={isNavBg ? 'brand' : 'white'} />
+            <Icon variant="burger" color={color} />
           )}
         </button>
       </div>

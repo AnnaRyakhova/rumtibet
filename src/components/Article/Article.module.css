@@ -1,0 +1,25 @@
+.root {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.title {
+    align-self: center;
+}
+
+.image {
+    width: 100%;
+    align-self: center;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    .image {
+        height: 200px;
+    }
+}

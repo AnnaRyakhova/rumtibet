@@ -1,26 +1,22 @@
 import './App.css'
-import { Offer } from '../Offer/Offer'
-import { FirstScreen } from '../FirstScreen/FirstScreen'
-import { Header } from '../Header/Header'
-import { About } from '../About/About'
-import { Directions } from '../Directions/Directions'
-import { Blog } from '../Blog/Blog'
-import { Photos } from '../Photos/Photos'
-import { Form } from '../Form/Form'
-import { Footer } from '../Footer/Footer'
-import { Toaster } from 'sonner'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Program } from '../../pages/Program/Program'
+import { Main } from '../../pages/Main/Main'
+import { Layout } from '../Layout/Layout'
+import ScrollToAnchor from '../ScrollToAnchor'
+import { Article } from '../Article/Article'
 
 export const App = () => (
   <>
-    <Toaster closeButton expand={true} richColors />
-    <Header />
-    <FirstScreen />
-    <About />
-    <Offer />
-    <Directions />
-    <Blog />
-    <Photos />
-    <Form />
-    <Footer />
+    <BrowserRouter>
+      <ScrollToAnchor />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="program" element={<Program />} />
+          <Route path="article/:id" element={<Article />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </>
 )

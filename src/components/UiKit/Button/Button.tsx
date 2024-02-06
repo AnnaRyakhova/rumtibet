@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import styles from './button.module.css'
+import styles from './Button.module.css'
 import cl from 'classnames'
 
 type Size = 'normal' | 'big'
