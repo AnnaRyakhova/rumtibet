@@ -3,6 +3,7 @@ import { Button } from '../UiKit/Button/Button'
 import { Typography } from '../UiKit/Typography/Typography'
 import styles from './About.module.css'
 import cn from 'classnames'
+import { Link } from 'react-router-dom'
 
 export const About = () => {
   const [isPlay, setIsPlay] = useState(false)
@@ -33,9 +34,11 @@ export const About = () => {
           <Typography variant="mainText">
             Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад.
             Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных
-            слов в Lorem Ipsum, "consectetur"и занялся его поисками в классической латинской литературе.
+            слов в Lorem Ipsum и занялся его поисками в классической латинской литературе.
           </Typography>
-          <Button className={styles.button}>Программа тура</Button>
+          <Link to="program">
+            <Button className={styles.button}>Программа тура</Button>
+          </Link>
         </div>
       </div>
     </div>

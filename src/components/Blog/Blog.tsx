@@ -4,6 +4,7 @@ import styles from './Blog.module.css'
 import cn from 'classnames'
 import { Button } from '../UiKit/Button/Button'
 import { toast } from 'sonner'
+import { MOCK_ARTICLES } from '../../pages/Article/constants'
 
 interface Card {
   imgPath: string
@@ -59,34 +60,11 @@ export const Blog = () => {
         </div>
 
         <div className={styles.cards}>
-          <Card
-            imgPath="/images/blog/blog_1.jpeg"
-            title="Красивая Италия, какая она в реальности?"
-            subtitle="Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации."
-            date="01/04/2023"
-            url='"#"'
-          />
-          <Card
-            imgPath="/images/blog/blog_2.jpeg"
-            title="Долой сомнения! Весь мир открыт для вас!"
-            subtitle="Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации."
-            date="10/04/2023"
-            url='"#"'
-          />
-          <Card
-            imgPath="/images/blog/blog_3.jpeg"
-            title="Как подготовиться к путешествию в одиночку?"
-            subtitle="Для современного мира базовый вектор развития предполагает."
-            date="12/04/2023"
-            url='"#"'
-          />
-          <Card
-            imgPath="/images/blog/blog_4.jpeg"
-            title="Индия ... летим?"
-            subtitle="Для современного мира базовый."
-            date="15/04/2023"
-            url='"#"'
-          />
+          {MOCK_ARTICLES.map(({ imgPath, title, subtitle, date, id }) => {
+            return (
+              <Card imgPath={imgPath} title={title} subtitle={subtitle} date={date} url={`article/:${id}`} key={id} />
+            )
+          })}
         </div>
 
         <Button onClick={handleClick}>Другие материалы</Button>
