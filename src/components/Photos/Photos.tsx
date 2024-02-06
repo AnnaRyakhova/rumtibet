@@ -20,7 +20,7 @@ export const Photos = () => {
           data-fancybox="gallery"
           href="/photos/photo_1.jpeg"
           className={cn(styles.photo, styles.wideItem)}
-          style={{ backgroundImage: "url('/photos/photo_1.jpeg')" }}
+          style={{ backgroundImage: "url('/images/photos/photo_1.jpeg')" }}
         >
           <Icon variant="loupe" color="white" className={styles.loupe} />
         </a>
@@ -28,7 +28,7 @@ export const Photos = () => {
           data-fancybox="gallery"
           href="/photos/photo_2.jpeg"
           className={styles.photo}
-          style={{ backgroundImage: "url('/photos/photo_2.jpeg')" }}
+          style={{ backgroundImage: "url('/images/photos/photo_2.jpeg')" }}
         >
           <Icon variant="loupe" color="white" className={styles.loupe} />{' '}
         </a>
@@ -36,7 +36,7 @@ export const Photos = () => {
           data-fancybox="gallery"
           href="/photos/photo_3.jpeg"
           className={styles.photo}
-          style={{ backgroundImage: "url('/photos/photo_3.jpeg')" }}
+          style={{ backgroundImage: "url('/images/photos/photo_3.jpeg')" }}
         >
           <Icon variant="loupe" color="white" className={styles.loupe} />{' '}
         </a>
@@ -45,7 +45,7 @@ export const Photos = () => {
           data-fancybox="gallery"
           href="/photos/photo_4.jpeg"
           className={styles.photo}
-          style={{ backgroundImage: "url('/photos/photo_4.jpeg')" }}
+          style={{ backgroundImage: "url('/images/photos/photo_4.jpeg')" }}
         >
           <Icon variant="loupe" color="white" className={styles.loupe} />{' '}
         </a>
@@ -53,7 +53,7 @@ export const Photos = () => {
           data-fancybox="gallery"
           href="/photos/photo_5.jpeg"
           className={cn(styles.photo, styles.wideItem)}
-          style={{ backgroundImage: "url('/photos/photo_5.jpeg')" }}
+          style={{ backgroundImage: "url('/images/photos/photo_5.jpeg')" }}
         >
           <Icon variant="loupe" color="white" className={styles.loupe} />
         </a>
@@ -61,7 +61,7 @@ export const Photos = () => {
           data-fancybox="gallery"
           href="/photos/photo_6.jpeg"
           className={styles.photo}
-          style={{ backgroundImage: "url('/photos/photo_6.jpeg')" }}
+          style={{ backgroundImage: "url('/images/photos/photo_6.jpeg')" }}
         >
           <Icon variant="loupe" color="white" className={styles.loupe} />
         </a>

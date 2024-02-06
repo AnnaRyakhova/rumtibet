@@ -1,4 +1,3 @@
-import { Toaster } from 'sonner'
 import { FirstScreen } from '../../components/FirstScreen/FirstScreen'
 import { Offer } from '../../components/Offer/Offer'
 import { About } from '../../components/About/About'
@@ -10,7 +9,6 @@ import { Form } from '../../components/Form/Form'
 export const Main = () => {
   return (
     <>
-      <Toaster closeButton expand={true} richColors />
       <FirstScreen />
       <About />
       <Offer />

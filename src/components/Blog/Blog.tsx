@@ -4,7 +4,7 @@ import styles from './Blog.module.css'
 import cn from 'classnames'
 import { Button } from '../UiKit/Button/Button'
 import { toast } from 'sonner'
-import { MOCK_ARTICLES } from '../Article/constants'
+import { MOCK_ARTICLES } from '../../pages/Article/constants'
 
 interface Card {
   imgPath: string
