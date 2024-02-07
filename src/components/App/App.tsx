@@ -6,6 +6,7 @@ import { Layout } from '../Layout/Layout'
 import ScrollToAnchor from '../ScrollToAnchor'
 import { Article } from '../../pages/Article/Article'
 import { Toaster } from 'sonner'
+import { Notfound } from '../../pages/Notfound/Notfound'
 
 export const App = () => (
   <>
@@ -18,6 +19,7 @@ export const App = () => (
           <Route path="program" element={<TourProgram />} />
           <Route path="article/:id" element={<Article />} />
         </Route>
+        <Route path="*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>
   </>
