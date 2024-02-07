@@ -1,0 +1,37 @@
+.background {
+    background: linear-gradient(170deg, rgba(255,255,255,1) 10%, rgba(26,62,62,1) 10%, rgba(26,62,62,1) 90%, rgba(255,255,255,1) 90%);
+}
+
+.root {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 60px;
+   height: 100lvh;
+}
+
+.error {
+    color: var(--light-color);
+    font-size: 380px;
+    line-height: 80%; 
+}
+
+.title {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .error {
+        font-size: 260px;
+    }
+}
+
+@media (max-width: 576px) {
+    .error {
+        font-size: 160px;
+    }
+    .title {
+        font-size: 26px;
+    }
+}

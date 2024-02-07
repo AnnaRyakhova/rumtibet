@@ -4,6 +4,7 @@ import styles from './Directions.module.css'
 import cn from 'classnames'
 import { Icon } from '../Icon/Icon'
 import { Button } from '../UiKit/Button/Button'
+import { Link } from 'react-router-dom'
 
 interface Card {
   background: string
@@ -72,7 +73,9 @@ export const Directions = () => {
           rating="5.0"
         />
       </div>
-      <Button>Рейтинг направлений</Button>
+      <Link to="error">
+        <Button>Рейтинг направлений</Button>
+      </Link>
     </div>
   )
 }

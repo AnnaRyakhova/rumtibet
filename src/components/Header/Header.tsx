@@ -74,9 +74,11 @@ export const Header = () => {
             </li>
           </ul>
 
-          <Button size="normal" className={styles.button}>
-            Консультация
-          </Button>
+          <Link to="error">
+            <Button size="normal" className={styles.button}>
+              Консультация
+            </Button>
+          </Link>
         </nav>
         <button onClick={() => setIsOpen(!isOpen)} className={styles.mobileMenuIcon}>
           {isOpen ? (
