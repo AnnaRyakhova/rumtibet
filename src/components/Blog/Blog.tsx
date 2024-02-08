@@ -5,6 +5,7 @@ import cn from 'classnames'
 import { Button } from '../UiKit/Button/Button'
 import { toast } from 'sonner'
 import { MOCK_ARTICLES } from '../../pages/Article/constants'
+import { Link } from 'react-router-dom'
 
 interface Card {
   imgPath: string
@@ -16,7 +17,7 @@ interface Card {
 
 const Card: FC<Card> = ({ imgPath, title, subtitle, date, url }) => {
   return (
-    <a href={url} className={styles.url}>
+    <Link to={url} className={styles.url}>
       <div className={styles.cardWrapper}>
         <div className={styles.imgWrapper}>
           <img src={imgPath} />
@@ -42,7 +43,7 @@ const Card: FC<Card> = ({ imgPath, title, subtitle, date, url }) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }
 

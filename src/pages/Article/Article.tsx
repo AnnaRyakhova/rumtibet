@@ -5,6 +5,7 @@ import cn from 'classnames'
 import styles from './Article.module.css'
 
 export const Article = () => {
+  window.scrollTo(0, 0)
   const params = useParams()
   const id = params.id?.slice(1)
 
