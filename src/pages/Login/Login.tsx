@@ -11,18 +11,18 @@ export const LoginPage = () => {
   const location = useLocation()
   const { signIn } = useAuth()
 
-  const [user, setUser] = useState('')
+  const [userName, setUserName] = useState('')
 
   const fromPage = location.state?.from?.pathname || '/'
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    signIn(user, () => navigate(fromPage, { replace: true }))
+    signIn(userName, () => navigate(fromPage, { replace: true }))
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUser(e.target.value)
+    setUserName(e.target.value)
   }
 
   return (

@@ -1,13 +1,13 @@
 import { ReactNode, createContext, useState } from 'react'
 
 interface IAuth {
-  user: string
+  userName: string
   signIn: (newUser: string, cb: () => void) => void
   signOut: (cb: () => void) => void
 }
 
 const defaultAuth = {
-  user: '',
+  userName: '',
   signIn: () => {},
   signOut: () => {},
 }
@@ -15,7 +15,7 @@ const defaultAuth = {
 export const AuthContext = createContext<IAuth>(defaultAuth)
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState('')
+  const [userName, setUser] = useState('')
   const signIn = (newUser: string, navigate: () => void) => {
     setUser(newUser)
     navigate()
@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     navigate()
   }
 
-  const value = { user, signIn, signOut }
+  const value = { userName, signIn, signOut }
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
