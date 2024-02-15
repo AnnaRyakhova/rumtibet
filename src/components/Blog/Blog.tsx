@@ -8,7 +8,6 @@ import { MOCK_ARTICLES } from '@/pages/Article/constants'
 import { Container } from '@/components/Container/Container'
 
 import styles from './Blog.module.css'
-import { Link } from 'react-router-dom'
 
 interface Card {
   imgPath: string
