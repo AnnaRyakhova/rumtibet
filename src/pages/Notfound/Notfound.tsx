@@ -1,13 +1,14 @@
-import { Button } from '../../components/UiKit/Button/Button'
-import { Typography } from '../../components/UiKit/Typography/Typography'
+import { Button } from '@/components/UiKit/Button/Button'
+import { Typography } from '@/components/UiKit/Typography/Typography'
 import { Link } from 'react-router-dom'
+import { Container } from '@/components/Container/Container'
+
 import styles from './Notfound.module.css'
-import cn from 'classnames'
 
 export const Notfound = () => {
   return (
     <div className={styles.background}>
-      <div className={cn(styles.root, 'container')}>
+      <Container className={styles.root}>
         <div className={styles.error}>404</div>
         <Typography variant="h1" color="lightColor" className={styles.title}>
           Страница не найдена
@@ -15,7 +16,7 @@ export const Notfound = () => {
         <Link to="/">
           <Button color="light">Вернуться на главную</Button>
         </Link>
-      </div>
+      </Container>
     </div>
   )
 }

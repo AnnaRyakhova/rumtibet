@@ -1,8 +1,10 @@
-import styles from './Offer.module.css'
-import { Button } from '../UiKit/Button/Button'
-import { Advantages } from './Advantages/Advantages'
-import { Typography } from '../UiKit/Typography/Typography'
 import { toast } from 'sonner'
+
+import { Button } from '@/components/UiKit/Button/Button'
+import { Typography } from '@/components/UiKit/Typography/Typography'
+
+import { Advantages } from './Advantages/Advantages'
+import styles from './Offer.module.css'
 
 export const Offer = () => {
   const handleClick = () => toast.error('Что-то пошло не так')

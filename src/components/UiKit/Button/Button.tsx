@@ -1,6 +1,7 @@
-import { FC } from 'react'
-import styles from './Button.module.css'
 import cl from 'classnames'
+import { FC } from 'react'
+
+import styles from './Button.module.css'
 
 type Size = 'normal' | 'big'
 type Color = 'dark' | 'light'

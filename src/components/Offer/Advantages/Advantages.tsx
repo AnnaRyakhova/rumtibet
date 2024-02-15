@@ -1,6 +1,8 @@
 import { FC } from 'react'
+
+import { Typography } from '@/components/UiKit/Typography/Typography'
+
 import styles from './Advantages.module.css'
-import { Typography } from '../../UiKit/Typography/Typography'
 
 interface Advantage {
   imgPath: string

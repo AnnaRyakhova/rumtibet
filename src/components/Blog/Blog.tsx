@@ -1,10 +1,12 @@
 import { FC } from 'react'
-import { Typography } from '../UiKit/Typography/Typography'
-import styles from './Blog.module.css'
-import cn from 'classnames'
-import { Button } from '../UiKit/Button/Button'
 import { toast } from 'sonner'
-import { MOCK_ARTICLES } from '../../pages/Article/constants'
+
+import { Typography } from '@/components/UiKit/Typography/Typography'
+import { Button } from '@/components/UiKit/Button/Button'
+import { MOCK_ARTICLES } from '@/pages/Article/constants'
+import { Container } from '@/components/Container/Container'
+
+import styles from './Blog.module.css'
 
 interface Card {
   imgPath: string
@@ -51,7 +53,7 @@ export const Blog = () => {
 
   return (
     <div className={styles.root} id="blog">
-      <div className={cn('container', styles.wrapper)}>
+      <Container className={styles.wrapper}>
         <div className={styles.title}>
           <Typography variant="accentSubtitle" color="accentColor">
             делимся впечатлениями
@@ -68,7 +70,7 @@ export const Blog = () => {
         </div>
 
         <Button onClick={handleClick}>Другие материалы</Button>
-      </div>
+      </Container>
     </div>
   )
 }

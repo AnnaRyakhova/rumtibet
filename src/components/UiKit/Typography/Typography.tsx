@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react'
-import styles from './Typography.module.css'
 import cl from 'classnames'
+
+import styles from './Typography.module.css'
 
 type Variant = 'h1' | 'h2' | 'h3' | 'accentSubtitle' | 'mainText' | 'subtitle'
 type Color = 'brandColor' | 'accentColor' | 'lightColor'

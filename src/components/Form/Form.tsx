@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { Button } from '../UiKit/Button/Button'
-import { Typography } from '../UiKit/Typography/Typography'
-import styles from './Form.module.css'
 import { toast } from 'sonner'
-import { useValidation } from '../../hooks'
+
+import { Button } from '@/components/UiKit/Button/Button'
+import { Typography } from '@/components/UiKit/Typography/Typography'
+import { useValidation } from '@/hooks'
+
+import styles from './Form.module.css'
 
 export const Form = () => {
   const [email, setEmail] = useState('')

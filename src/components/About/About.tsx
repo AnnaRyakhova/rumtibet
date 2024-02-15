@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import { Button } from '../UiKit/Button/Button'
-import { Typography } from '../UiKit/Typography/Typography'
-import styles from './About.module.css'
-import cn from 'classnames'
 import { Link } from 'react-router-dom'
+
+import { Button } from '@/components/UiKit/Button/Button'
+import { Typography } from '@/components/UiKit/Typography/Typography'
+import { Container } from '@/components/Container/Container'
+
+import styles from './About.module.css'
 
 export const About = () => {
   const [isPlay, setIsPlay] = useState(false)
 
   return (
-    <div className={cn(styles.root, 'container')} id="program">
+    <Container className={styles.root} id="program">
       <div className={styles.wrapper}>
         <div className={styles.views}>
           <div className={styles.imgWrapper}>
@@ -41,6 +43,6 @@ export const About = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }

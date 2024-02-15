@@ -1,10 +1,11 @@
-import { Typography } from '../../components/UiKit/Typography/Typography'
+import { Typography } from '@/components/UiKit/Typography/Typography'
+import { Container } from '@/components/Container/Container'
+
 import styles from './TourProgram.module.css'
-import cn from 'classnames'
 
 export const TourProgram = () => {
   return (
-    <div className={cn(styles.root, 'container')}>
+    <Container className={styles.root}>
       <img src="/images/tourProgram/program.webp" className={styles.image} />
       <Typography variant="h1" color="brandColor" className={styles.title}>
         Программа тура
@@ -30,6 +31,6 @@ export const TourProgram = () => {
         регионом! Программа тура в Тибет гарантирует незабываемые впечатления, открытие новых миров и насыщенный
         культурный опыт.
       </Typography>
-    </div>
+    </Container>
   )
 }
