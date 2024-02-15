@@ -7,19 +7,10 @@ import { Article } from '@/pages/Article/Article'
 import { Notfound } from '@/pages/Notfound/Notfound'
 import { Layout } from '@/components/Layout/Layout'
 import ScrollToAnchor from '@/components/ScrollToAnchor'
-
-import './App.css'
-import { LoginPage } from '../../pages/Login/Login'
-import { RequireAuth } from '../../hoc/RequireAuth'
-import { SpecialPrices } from '../../pages/SpecialPrices/SpecialPrices'
-import { AuthProvider } from '../../hoc/AuthProvider'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
-import { TourProgram } from '@/pages/TourProgram/TourProgram'
-import { Main } from '@/pages/Main/Main'
-import { Article } from '@/pages/Article/Article'
-import { Layout } from '@/components/Layout/Layout'
-import ScrollToAnchor from '@/components/ScrollToAnchor'
+import { LoginPage } from '@/pages/Login/Login'
+import { RequireAuth } from '@/hoc/RequireAuth'
+import { SpecialPrices } from '@/pages/SpecialPrices/SpecialPrices'
+import { AuthProvider } from '@/hoc/AuthProvider'
 
 import './App.css'
 
