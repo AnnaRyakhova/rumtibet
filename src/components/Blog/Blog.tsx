@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { toast } from 'sonner'
+import { Link } from 'react-router-dom'
 
 import { Typography } from '@/components/UiKit/Typography/Typography'
 import { Button } from '@/components/UiKit/Button/Button'
@@ -7,7 +8,6 @@ import { MOCK_ARTICLES } from '@/pages/Article/constants'
 import { Container } from '@/components/Container/Container'
 
 import styles from './Blog.module.css'
-import { Link } from 'react-router-dom'
 
 interface Card {
   imgPath: string
