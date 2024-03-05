@@ -1,0 +1,39 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    gap: 24px;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    gap: 24px;
+}
+
+.title {
+    text-align: center;
+}
+
+.label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.label input {
+    height: 24px;
+}
+
+@media (max-width: 768px) {
+    .root {
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .form {
+        gap: 16px;
+    }
+}

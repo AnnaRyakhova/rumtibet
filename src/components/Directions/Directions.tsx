@@ -16,7 +16,7 @@ interface Card {
   rating: string
 }
 
-const Card: FC<Card> = ({ background, title, subtitle, price, rating }) => {
+export const Card: FC<Card> = ({ background, title, subtitle, price, rating }) => {
   return (
     <div className={styles.cardWrapper} style={{ backgroundImage: `url(${background})` }}>
       <div className={styles.rating}>
@@ -74,8 +74,8 @@ export const Directions = () => {
           rating="5.0"
         />
       </div>
-      <Link to="error">
-        <Button>Рейтинг направлений</Button>
+      <Link to="/special">
+        <Button>Специальные цены</Button>
       </Link>
     </Container>
   )
