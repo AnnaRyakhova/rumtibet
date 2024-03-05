@@ -1,0 +1,29 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 120px 0 80px;
+}
+
+.title {
+    align-self: center;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 24px;
+    overflow-x: scroll;
+    padding: 0 16px;
+}
+
+.button {
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .root {
+        gap: 24px;
+        padding: 120px 0 40px;
+    }
+}

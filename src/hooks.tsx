@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { AuthContext } from './hoc/AuthProvider'
 
 type Validations = Record<string, string | boolean | number>
 
@@ -31,4 +32,8 @@ export const useValidation = (value: string | null | Date, validations: Validati
   }, [value])
 
   return { isEmpty, minLengthError, emailError }
+}
+
+export const useAuth = () => {
+  return useContext(AuthContext)
 }
