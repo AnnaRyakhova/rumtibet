@@ -3,6 +3,7 @@ import styles from './TourProgram.module.css'
 import cn from 'classnames'
 
 export const TourProgram = () => {
+  window.scrollTo(0, 0)
   return (
     <div className={cn(styles.root, 'container')}>
       <img src="/images/tourProgram/program.webp" className={styles.image} />

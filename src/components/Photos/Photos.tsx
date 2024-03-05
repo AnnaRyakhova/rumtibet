@@ -18,7 +18,7 @@ export const Photos = () => {
       <Fancybox className={styles.photos}>
         <a
           data-fancybox="gallery"
-          href="/photos/photo_1.jpeg"
+          href="/images/photos/photo_1.jpeg"
           className={cn(styles.photo, styles.wideItem)}
           style={{ backgroundImage: "url('/images/photos/photo_1.jpeg')" }}
         >
@@ -26,7 +26,7 @@ export const Photos = () => {
         </a>
         <a
           data-fancybox="gallery"
-          href="/photos/photo_2.jpeg"
+          href="/images/photos/photo_2.jpeg"
           className={styles.photo}
           style={{ backgroundImage: "url('/images/photos/photo_2.jpeg')" }}
         >
@@ -34,7 +34,7 @@ export const Photos = () => {
         </a>
         <a
           data-fancybox="gallery"
-          href="/photos/photo_3.jpeg"
+          href="/images/photos/photo_3.jpeg"
           className={styles.photo}
           style={{ backgroundImage: "url('/images/photos/photo_3.jpeg')" }}
         >
@@ -43,7 +43,7 @@ export const Photos = () => {
 
         <a
           data-fancybox="gallery"
-          href="/photos/photo_4.jpeg"
+          href="/images/photos/photo_4.jpeg"
           className={styles.photo}
           style={{ backgroundImage: "url('/images/photos/photo_4.jpeg')" }}
         >
@@ -51,7 +51,7 @@ export const Photos = () => {
         </a>
         <a
           data-fancybox="gallery"
-          href="/photos/photo_5.jpeg"
+          href="/images/photos/photo_5.jpeg"
           className={cn(styles.photo, styles.wideItem)}
           style={{ backgroundImage: "url('/images/photos/photo_5.jpeg')" }}
         >
@@ -59,7 +59,7 @@ export const Photos = () => {
         </a>
         <a
           data-fancybox="gallery"
-          href="/photos/photo_6.jpeg"
+          href="/images/photos/photo_6.jpeg"
           className={styles.photo}
           style={{ backgroundImage: "url('/images/photos/photo_6.jpeg')" }}
         >
