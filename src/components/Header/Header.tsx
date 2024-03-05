@@ -1,10 +1,12 @@
-import styles from './Header.module.css'
-import { Button } from '../UiKit/Button/Button'
-import { useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 import cn from 'classnames'
-import { Icon } from '../Icon/Icon'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useLocation, Link } from 'react-router-dom'
+
+import { Button } from '@/components/UiKit/Button/Button'
+import { Icon } from '@/components/Icon/Icon'
+import { Container } from '@/components/Container/Container'
+
+import styles from './Header.module.css'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,7 +33,7 @@ export const Header = () => {
 
   return (
     <div className={cn(styles.root, { [styles.background]: isNavBackground })}>
-      <div className={cn('container', styles.wrapper)}>
+      <Container className={styles.wrapper}>
         <Icon variant="logo" color={color} className={styles.logo} />
 
         <nav className={styles.nav}>
@@ -87,7 +89,7 @@ export const Header = () => {
             <Icon variant="burger" color={color} />
           )}
         </button>
-      </div>
+      </Container>
     </div>
   )
 }

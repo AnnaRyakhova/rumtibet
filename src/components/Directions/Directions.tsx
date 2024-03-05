@@ -1,10 +1,12 @@
 import { FC } from 'react'
-import { Typography } from '../UiKit/Typography/Typography'
-import styles from './Directions.module.css'
-import cn from 'classnames'
-import { Icon } from '../Icon/Icon'
-import { Button } from '../UiKit/Button/Button'
 import { Link } from 'react-router-dom'
+
+import { Typography } from '@/components/UiKit/Typography/Typography'
+import { Icon } from '@/components/Icon/Icon'
+import { Button } from '@/components/UiKit/Button/Button'
+import { Container } from '@/components/Container/Container'
+
+import styles from './Directions.module.css'
 
 interface Card {
   background: string
@@ -41,14 +43,13 @@ export const Card: FC<Card> = ({ background, title, subtitle, price, rating }) =
 
 export const Directions = () => {
   return (
-    <div className={cn('container', styles.wrapper)} id="price">
+    <Container className={styles.wrapper} id="price">
       <div className={styles.text}>
         <Typography variant="accentSubtitle" color="accentColor">
           по версии отдыхающих
         </Typography>
         <Typography variant="h2">Популярные направления</Typography>
       </div>
-
       <div className={styles.cards}>
         <Card
           background="/images/directions/lake.jpeg"
@@ -76,6 +77,6 @@ export const Directions = () => {
       <Link to="/special">
         <Button>Специальные цены</Button>
       </Link>
-    </div>
+    </Container>
   )
 }

@@ -1,12 +1,13 @@
-import { Icon } from '../Icon/Icon'
+import { Icon } from '@/components/Icon/Icon'
+import { Container } from '@/components/Container/Container'
+
 import styles from './Footer.module.css'
-import cn from 'classnames'
 
 export const Footer = () => {
   return (
     <>
       <div className={styles.footer} id="contacts">
-        <div className={cn(styles.wrapper, 'container')}>
+        <Container className={styles.wrapper}>
           <div className={styles.about}>
             <div className={styles.description}>
               <h3 className={styles.title}>Компания «РумТибет»</h3>
@@ -118,16 +119,16 @@ export const Footer = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
 
       <div className={styles.subfooter}>
-        <div className={cn('container', styles.content)}>
+        <Container className={styles.content}>
           <p className={styles.text}>ИП Константинопольский К.К., 2023</p>
           <a href="#" className={styles.text}>
             Политика обработки персональных данных
           </a>
-        </div>
+        </Container>
       </div>
     </>
   )

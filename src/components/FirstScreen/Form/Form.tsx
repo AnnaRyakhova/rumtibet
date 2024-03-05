@@ -1,15 +1,17 @@
-import styles from './Form.module.css'
 import { useState } from 'react'
-import { FormState, INITIAL_FORM, LOCATIONS } from '../constants'
-import { getDefaultMembersCount, getLabel, getLocation, getOptions, isRangeContainsMembers } from '../utils'
+import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import { toast } from 'sonner'
-import { useValidation } from '../../../hooks'
+
+import { useValidation } from '@/hooks'
+import { Icon } from '@/components/Icon/Icon'
+import { Typography } from '@/components/UiKit/Typography/Typography'
+import { Button } from '@/components/UiKit/Button/Button'
+
+import { FormState, INITIAL_FORM, LOCATIONS } from '../constants'
+import { getDefaultMembersCount, getLabel, getLocation, getOptions, isRangeContainsMembers } from '../utils'
 import { Select } from '../Select/Select'
-import DatePicker from 'react-datepicker'
-import { Icon } from '../../Icon/Icon'
-import { Typography } from '../../UiKit/Typography/Typography'
-import { Button } from '../../UiKit/Button/Button'
+import styles from './Form.module.css'
 
 type Range = [Date, Date]
 

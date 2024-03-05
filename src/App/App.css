@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "NEXT ART";
-  src: url('../../fonts/NEXTART_Bold.otf');
+  src: url('../fonts/NEXTART_Bold.otf');
 }
 
 * {
@@ -36,11 +36,13 @@ box-sizing: border-box;
 .container {
   max-width: 1260px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 @media (max-width: 576px) {
   .container {
-    padding: 0 16px;
+    padding-left: 16px;
+  padding-right: 16px;
   }
 }

@@ -1,7 +1,9 @@
-import { Typography } from '../../components/UiKit/Typography/Typography'
 import { useParams, Navigate } from 'react-router-dom'
+
+import { Typography } from '@/components/UiKit/Typography/Typography'
+import { Container } from '@/components/Container/Container'
+
 import { MOCK_ARTICLES } from './constants'
-import cn from 'classnames'
 import styles from './Article.module.css'
 
 export const Article = () => {
@@ -18,7 +20,7 @@ export const Article = () => {
   const paragraphs = article.text.split('\n')
 
   return (
-    <div className={cn(styles.root, 'container')}>
+    <Container className={styles.root}>
       <img src={article.imgPath} className={styles.image} />
       <Typography variant="h2" className={styles.title}>
         {article.title}
@@ -28,6 +30,6 @@ export const Article = () => {
           {paragraph}
         </Typography>
       ))}
-    </div>
+    </Container>
   )
 }

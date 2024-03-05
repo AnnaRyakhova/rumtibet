@@ -1,13 +1,16 @@
-import { Icon } from '../Icon/Icon'
-import { Button } from '../UiKit/Button/Button'
-import { Typography } from '../UiKit/Typography/Typography'
-import styles from './Photos.module.css'
-import cn from 'classnames'
 import Fancybox from './Fancybox'
+import cn from 'classnames'
+
+import { Icon } from '@/components/Icon/Icon'
+import { Button } from '@/components/UiKit/Button/Button'
+import { Typography } from '@/components/UiKit/Typography/Typography'
+
+import styles from './Photos.module.css'
+import { Container } from '../Container/Container'
 
 export const Photos = () => {
   return (
-    <div className={cn(styles.wrapper, 'container')}>
+    <Container className={styles.wrapper}>
       <div className={styles.title}>
         <Typography variant="accentSubtitle" color="accentColor">
           фото-отчет
@@ -68,6 +71,6 @@ export const Photos = () => {
       </Fancybox>
 
       <Button>Наш pinterest</Button>
-    </div>
+    </Container>
   )
 }

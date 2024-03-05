@@ -1,6 +1,8 @@
-import styles from './Select.module.css'
 import { FC } from 'react'
-import { Typography } from '../../UiKit/Typography/Typography'
+
+import { Typography } from '@/components/UiKit/Typography/Typography'
+
+import styles from './Select.module.css'
 
 export interface Option {
   value: string
