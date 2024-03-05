@@ -4,6 +4,7 @@ import { Container } from '@/components/Container/Container'
 import styles from './TourProgram.module.css'
 
 export const TourProgram = () => {
+  window.scrollTo(0, 0)
   return (
     <Container className={styles.root}>
       <img src="/images/tourProgram/program.webp" className={styles.image} />

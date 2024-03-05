@@ -7,6 +7,7 @@ import { MOCK_ARTICLES } from '@/pages/Article/constants'
 import { Container } from '@/components/Container/Container'
 
 import styles from './Blog.module.css'
+import { Link } from 'react-router-dom'
 
 interface Card {
   imgPath: string
@@ -18,7 +19,7 @@ interface Card {
 
 const Card: FC<Card> = ({ imgPath, title, subtitle, date, url }) => {
   return (
-    <a href={url} className={styles.url}>
+    <Link to={url} className={styles.url}>
       <div className={styles.cardWrapper}>
         <div className={styles.imgWrapper}>
           <img src={imgPath} />
@@ -44,7 +45,7 @@ const Card: FC<Card> = ({ imgPath, title, subtitle, date, url }) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }
 
