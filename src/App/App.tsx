@@ -13,6 +13,10 @@ import { SpecialPrices } from '@/pages/SpecialPrices/SpecialPrices'
 import { AuthProvider } from '@/hoc/AuthProvider'
 
 import './App.css'
+import { LoginPage } from '../../pages/Login/Login'
+import { RequireAuth } from '../../hoc/RequireAuth'
+import { SpecialPrices } from '../../pages/SpecialPrices/SpecialPrices'
+import { AuthProvider } from '../../hoc/AuthProvider'
 
 export const App = () => (
   <>
